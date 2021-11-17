@@ -1,40 +1,58 @@
 package com.example.alevel;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import com.google.android.material.navigation.NavigationView;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.Button;
-import android.content.Intent;
+import com.example.alevel.databinding.ActivityMainBinding;
 
 
 public class Main extends AppCompatActivity {
-    Button switchToSecondActivity;
-    Button switchToThirdActivity;
+    private AppBarConfiguration mAppBarConfiguration;
+    private ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        switchToSecondActivity = findViewById(R.id.activity_first_button);
-        switchToSecondActivity.setOnClickListener(v -> {
-            switchActivities1();
-        });
-        switchToThirdActivity = findViewById(R.id.activity_third_button);
-        switchToThirdActivity.setOnClickListener(v -> {
-            switchActivities2();
-        });
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.drawerLayout;
+        setContentView(view);
 
+
+        setSupportActionBar(binding.appBarMain.toolbar);
+
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                .setOpenableLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-
-    private void switchActivities1(){
-        Intent switchActivitiesIntent = new Intent(this, page2.class);
-        startActivity(switchActivitiesIntent);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_main_drawer, menu);
+        return true;
     }
 
-    private void switchActivities2(){
-        Intent switchActivitiesIntent = new Intent(this, page3.class);
-        startActivity(switchActivitiesIntent);
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
+                || super.onSupportNavigateUp();
     }
-
 }
+
 

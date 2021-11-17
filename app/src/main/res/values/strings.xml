@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">alevel</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Home</string>
+    <string name="nav_header_title">Navigation</string>
+    <string name="nav_header_subtitle">Hello!</string>
+    <string name="nav_header_desc">Navigate between apps</string>
 </resources>
