@@ -1,4 +1,4 @@
-package com.example.alevel;
+package com.example.a_level;
 
 import org.junit.Test;
 

@@ -7,10 +7,15 @@
 
     <activity
         android:id="@+id/account_page"
-        android:name="com.example.alevel.ui.account.account_page"
+        android:name="com.example.a_level.ui.account.account_page"
         android:label="account_page" />
     <activity
         android:id="@+id/calendar_page"
-        android:name="com.example.alevel.ui.calendar.calendar_page"
+        android:name="com.example.a_level.ui.calendar.calendar_page"
         android:label="calendar_page" />
+    <fragment
+        android:id="@+id/home_page"
+        android:name="com.example.a_level.ui.home.home_page"
+        android:label="page_home"
+        tools:layout="@layout/page_home" />
 </navigation>

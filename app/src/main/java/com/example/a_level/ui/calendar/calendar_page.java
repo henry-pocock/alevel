@@ -1,4 +1,4 @@
-package com.example.alevel.ui.calendar;
+package com.example.a_level.ui.calendar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.example.alevel.databinding.PageCalendarBinding;
+import com.example.a_level.databinding.PageCalendarBinding;
 
 public class calendar_page extends Fragment {
 

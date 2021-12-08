@@ -1,4 +1,4 @@
-package com.example.alevel.ui.account;
+package com.example.a_level.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,15 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import com.example.alevel.databinding.PageAccountBinding;
 
-public class account_page extends Fragment {
-    private PageAccountBinding binding;
+import com.example.a_level.databinding.PageHomeBinding;
+
+
+public class home_page extends Fragment {
+    private PageHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = PageAccountBinding.inflate(inflater, container, false);
+        binding = PageHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;
