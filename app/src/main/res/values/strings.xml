@@ -6,4 +6,5 @@
     <string name="nav_header_title">Navigation</string>
     <string name="nav_header_subtitle">Hello!</string>
     <string name="nav_header_desc">Navigate between apps</string>
+    <string name="todo">To Do</string>
 </resources>
