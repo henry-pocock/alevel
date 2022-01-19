@@ -11,15 +11,22 @@
         android:label="@string/menu_home"
         tools:layout="@layout/page_home" />
 
+
     <fragment
         android:id="@+id/nav_account"
         android:name="com.example.a_level.ui.account.account_page"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_account"
         tools:layout="@layout/page_account" />
 
     <fragment
         android:id="@+id/nav_calendar"
         android:name="com.example.a_level.ui.calendar.calendar_page"
-        android:label="@string/menu_account"
+        android:label="@string/menu_calendar"
         tools:layout="@layout/page_calendar" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.a_level.ui.settings.settings"
+        android:label="@string/settings"
+        tools:layout="@layout/settings_menu"/>
 </navigation>
