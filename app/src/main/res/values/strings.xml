@@ -8,4 +8,14 @@
     <string name="nav_header_desc">Navigate between apps</string>
     <string name="todo">To Do</string>
     <string name="settings">Settings</string>
+
+    <string name="load_data">Load data</string>
+    <string name="loaded_data">Loaded data</string>
+    <string name="state_label">State: </string>
+    <string name="date_label">Date: </string>
+    <string name="details_label">Details: </string>
+    <string name="add_new_btn">Add New</string>
+    <string name="addDetailsHint">Action item</string>
+    <string name="completeSwitch">Done</string>
+
 </resources>

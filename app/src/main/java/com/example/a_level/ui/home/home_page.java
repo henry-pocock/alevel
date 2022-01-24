@@ -1,35 +1,46 @@
 package com.example.a_level.ui.home;
 
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.a_level.databinding.PageHomeBinding;
+import com.example.a_level.classes.DataListActivity;
+
+
 
 public class home_page extends Fragment {
 
-    private home_view_model homeViewModel;
     private PageHomeBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(home_view_model.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        home_view_model homeViewModel = new ViewModelProvider(this).get(home_view_model.class);
 
         binding = PageHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), s -> textView.setText(s));
+        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
+    }
+
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.loadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DataListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
