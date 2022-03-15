@@ -5,12 +5,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.a_level.databinding.PageCalendarBinding;
+
 import com.skyhope.eventcalenderlibrary.CalenderEvent;
 import com.skyhope.eventcalenderlibrary.listener.CalenderDayClickListener;
 import com.skyhope.eventcalenderlibrary.model.DayContainerModel;
@@ -18,6 +21,8 @@ import com.skyhope.eventcalenderlibrary.model.Event;
 
 import java.util.Calendar;
 import android.widget.Button;
+
+import org.w3c.dom.Text;
 
 public class calendar_page extends Fragment {
 
@@ -30,15 +35,31 @@ public class calendar_page extends Fragment {
         binding = PageCalendarBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        Button button = binding.eventButton;
-        button.setOnClickListener(v -> {
+        binding.eventButton.setOnClickListener(v -> {
             CalenderEvent calendarEvent = binding.calendarEvent;
-            Event event = new Event(Calendar.getInstance().getTimeInMillis(), "Test");
+            EditText eventNameEdit = binding.setEventName;
+            String eventName = eventNameEdit.getText().toString();
+            Event event = new Event(Calendar.getInstance().getTimeInMillis(), eventName);
             calendarEvent.addEvent(event);
         });
 
-        CalenderEvent calenderEvent = binding.calendarEvent;
-        calenderEvent.initCalderItemClickCallback(dayContainerModel -> Log.d("Test", dayContainerModel.getDate()));
+
+        binding.calendarEvent.initCalderItemClickCallback(new CalenderDayClickListener() {
+            @Override
+            public void onGetDay(DayContainerModel dayContainerModel) {
+                TextView dayEvent = binding.daysEvents;
+                dayEvent.setText("");
+
+               if ( dayContainerModel.isHaveEvent()) {
+                   dayEvent.setText(dayContainerModel.getEvent().getEventText());
+               } else {
+                   Log.d("tim", "No event");
+               }
+
+
+            }
+        });
+
 
         return root;
     }

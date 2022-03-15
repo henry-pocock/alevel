@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.a_level.databinding.PageHomeBinding;
-import com.example.a_level.classes.DataListActivity;
 
 
 
@@ -33,14 +32,6 @@ public class home_page extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        binding.loadDataButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), DataListActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     @Override

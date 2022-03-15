@@ -17,5 +17,6 @@
     <string name="add_new_btn">Add New</string>
     <string name="addDetailsHint">Action item</string>
     <string name="completeSwitch">Done</string>
+    <string name="submit_button">Submit</string>
 
 </resources>
