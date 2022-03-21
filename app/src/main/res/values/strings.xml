@@ -18,5 +18,7 @@
     <string name="addDetailsHint">Action item</string>
     <string name="completeSwitch">Done</string>
     <string name="submit_button">Submit</string>
+    <string name="error_title">What Is Your Error/Query?</string>
+    <string name="new_event">New Event</string>
 
 </resources>

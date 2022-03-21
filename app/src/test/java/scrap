@@ -1,0 +1,32 @@
+public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        binding.loadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), DataListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+
+
+    final TextView textView = binding.textCalendar;
+            calendarViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+
+
+
+            
+            private final MutableLiveData<String> mText;
+
+                public calendar_view_model() {
+                    mText = new MutableLiveData<>();
+                    mText.setValue("This is slideshow fragment");
+                }
+
+                public LiveData<String> getText() {
+                    return mText;
+                }

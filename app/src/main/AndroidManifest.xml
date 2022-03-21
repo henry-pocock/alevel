@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a_level">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -10,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.a_level">
 
-        <activity
-            android:name=".ui.errorreport_page">
-        </activity>
+        <activity android:name=".ui.errorreport_page"/>
+        <!--Used for inflating the error report page-->
+        <activity android:name=".ui.calendar.new_event_interface"/>
+        <!--Used for inflating the new event interface-->
 
         <activity
             android:name=".Main"
@@ -24,6 +28,5 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
     </application>
 </manifest>
