@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.calendar.calendar_page" >
 
-    <com.skyhope.eventcalenderlibrary.CalenderEvent
+    2<com.skyhope.eventcalenderlibrary.CalenderEvent
         android:id="@+id/calendar_event"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,24 +23,40 @@
         android:id="@+id/event_button"
         android:layout_width="110dp"
         android:layout_height="40dp"
+        android:hapticFeedbackEnabled="true"
         android:text="New Event"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/calendar_event"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:hapticFeedbackEnabled="true"
-        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintVertical_bias="0.4"
-        android:textSize="12sp"/>
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Events"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/event_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.2"/>
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="com.example.a_level.ui.calendar.days_event"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/calendar_event"
+        tools:layout="@layout/event_days_fragment"
+        app:layout_constraintVertical_bias="0.6"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
