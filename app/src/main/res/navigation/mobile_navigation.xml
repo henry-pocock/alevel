@@ -33,9 +33,9 @@
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.a_level.ui.settings.settings"
+        android:name="com.example.a_level.ui.account.settings_page"
         android:label="@string/settings"
-        tools:layout="@layout/settings_menu">
+        tools:layout="@layout/page_settings">
         <action
             android:id="@+id/action_nav_settings_to_errorreport_page"
             app:destination="@id/errorreport_page" />

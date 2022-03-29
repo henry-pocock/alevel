@@ -20,5 +20,6 @@
     <string name="submit_button">Submit</string>
     <string name="error_title">What Is Your Error/Query?</string>
     <string name="new_event">New Event</string>
+    <string name="settings_page">Settings Page</string>
 
 </resources>

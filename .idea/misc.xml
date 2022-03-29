@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_menu_calendar.xml" value="0.18198198198198198" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.10585585585585586" />
         <entry key="app/src/main/res/layout-v26/activity_data_list.xml" value="0.3489583333333333" />
+        <entry key="app/src/main/res/layout/action_item.xml" value="0.30180180180180183" />
         <entry key="app/src/main/res/layout/activity_3.xml" value="0.30180180180180183" />
         <entry key="app/src/main/res/layout/activity_data_list.xml" value="0.23467499944677075" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -29,6 +30,7 @@
         <entry key="app/src/main/res/layout/page_calendar.xml" value="0.5" />
         <entry key="app/src/main/res/layout/page_errorreport.xml" value="0.25" />
         <entry key="app/src/main/res/layout/page_home.xml" value="0.2028985507246377" />
+        <entry key="app/src/main/res/layout/page_settings.xml" value="0.2670206941968065" />
         <entry key="app/src/main/res/layout/settings_menu.xml" value="0.30180180180180183" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.1891891891891892" />
       </map>
